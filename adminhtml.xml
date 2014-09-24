@@ -1,0 +1,43 @@
+<<filename:l:app/code/[codepool]/[Prefix]/[Module]/etc:"adminhtml">>
+<<var:n:module prefix => [Prefix]>>
+<<var:l:module prefix => [prefix]>>
+<<var:c:module name => [Module]>>
+<<var:l:module name => [module]>>
+<<var:l:code pool => [codepool]>>
+	
+<?xml version="1.0"?>
+<config>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <!-- define system config tab -->
+            <admin>
+            	<children>
+	            	<system>
+		                <children>
+		                	<config>
+		                		<children>
+				                    <[module]>
+				                        <!-- tab title and sort order -->
+				                        <title>[Module] Module</title>
+				                        <sort_order>500</sort_order>
+				                    </[module]>
+			                    </children>
+		                    </config>
+		                </children>
+	                </system>
+                </children>
+            </admin>
+        </resources>   
+    </acl>
+    <!-- define admin layout -->
+    <layout>
+        <updates>
+            <[module]>
+                <file>[module].xml</file>
+            </[module]>
+        </updates>
+    </layout>
+</config>

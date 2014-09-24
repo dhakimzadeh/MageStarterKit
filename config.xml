@@ -1,0 +1,90 @@
+<<filename:l:app/code/[codepool]/[Prefix]/[Module]/etc:"config">>
+<<var:n:module prefix => [Prefix]>>
+<<var:l:module prefix => [prefix]>>
+<<var:c:module name => [Module]>>
+<<var:l:module name => [module]>>
+<<var:l:code pool => [codepool]>>
+
+<?xml version="1.0"?>
+<!-- This XML file informs Magento of the location of the files in [Prefix] [Module] -->
+<!-- The root node for Magento module configuration -->
+<config>
+    <!-- The module's node contains basic information about each Magento module -->
+	<modules> 
+	    <!-- This must exactly match the namespace and module's folder names, with directory separators replaced by underscores -->
+		<[Prefix]_[Module]>
+		    <!-- define version and optionally, define dependencies -->
+			<version><<var:n:extension version>></version>
+		</[Prefix]_[Module]>
+	</modules>
+
+	<frontend>
+		<routers>
+			<[module]>
+				<use>standard</use>
+				<args>
+					<module>[Prefix]_[Module]</module>
+					<frontName>[module]</frontName>
+				</args>
+			</[module]>	
+		</routers>
+		<layout>
+			<updates>
+				<[module]>
+					<file>[module].xml</file>
+				</[module]>
+			</updates>
+		</layout>
+		<translate>
+			<modules>
+				<[Prefix]_[Module]>
+					<files>
+						<default>[Prefix]_[Module].csv</default>
+					</files>
+				</[Prefix]_[Module]>
+			</modules>
+		</translate>
+	</frontend>
+
+    <admin>
+        <routers>
+            <[module]>
+                <use>admin</use>
+                <args>
+                    <module>[Prefix]_[Module]</module>
+                    <frontName>[module]</frontName>
+                </args>
+            </[module]>
+        </routers>
+    </admin>
+    
+    <adminhtml>
+    	<layout>
+	        <updates>
+	            <[module]>
+	                <file>[module].xml</file>
+	            </[module]>
+	        </updates>
+    	</layout>
+    </adminhtml>
+		
+	<!-- defines module classes for blocks, helpers, and models -->
+	<global> 
+		<blocks>
+			<[module]>
+				<class>[Prefix]_[Module]_Block</class>
+			</[module]>
+		</blocks>
+		<helpers>
+            <[module]>
+                <class>[Prefix]_[Module]_Helper</class>
+            </[module]>
+        </helpers>
+		<models> 
+			<[module]>
+				<class>[Prefix]_[Module]_Model</class> 
+			</[module]>
+		</models>
+	</global>
+	
+</config>

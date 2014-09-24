@@ -1,0 +1,17 @@
+<<filename:l:app/design/adminhtml/default/default/layout/:"[module]">>
+<<var:n:module prefix => [Prefix]>>
+<<var:l:module prefix => [prefix]>>
+<<var:c:module name => [Module]>>
+<<var:l:module name => [module]>>
+	
+<?xml version="1.0"?>
+<layout>
+	
+	<adminhtml_system_config_edit>
+		<reference name="head">
+			<action method="addItem"><type>skin_css</type><name>[module]/[module]-admin.css</name></action>
+			<action method="addItem"><type>skin_js</type><name>[module]/[module].js</name></action>
+		</reference>
+	</adminhtml_system_config_edit>
+
+</layout>

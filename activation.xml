@@ -1,0 +1,20 @@
+<<filename:l:app/etc/modules/:"[Prefix]_[Module]">>
+<<var:n:module prefix => [Prefix]>>
+<<var:l:module prefix => [prefix]>>
+<<var:c:module name => [Module]>>
+<<var:l:module name => [module]>>
+<<var:l:code pool => [codepool]>>
+	
+<?xml version="1.0"?>
+<!-- This file informs Magento that [Prefix] [Module] exists --> 
+<config>
+    <modules>
+        <[Prefix]_[Module]>
+            <!-- Whether our module is active: true or false -->
+            <active>true</active>
+            <!-- Which code pool to use: core, community or local -->
+            <codePool>[codepool]</codePool>
+            <version><<var:n:extension version>></version>
+        </[Prefix]_[Module]>
+    </modules>
+</config>
