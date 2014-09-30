@@ -1,4 +1,4 @@
-<<filename:l:app/design/frontend/default/default/layout/:"[module]">>
+<<filename:l:app/design/frontend/base/default/layout/:"[module]">>
 <<var:n:module prefix => [Prefix]>>
 <<var:l:module prefix => [prefix]>>
 <<var:c:module name => [Module]>>
